@@ -8,7 +8,7 @@ android {
         enabled true
     }
     compileSdkVersion 26
-    buildToolsVersion "26.0.1"
+    buildToolsVersion '26.0.2'
     defaultConfig {
         applicationId "codemakers.daggermvvm"
         minSdkVersion 15
@@ -50,18 +50,18 @@ dependencies {
     kapt "android.arch.persistence.room:compiler:$arch_version"
     kapt "android.arch.lifecycle:compiler:$arch_version"
     //Dagger
-    androidTestCompile 'com.google.code.findbugs:jsr305:3.0.1'
     compile "com.google.dagger:dagger:$dagger_version"
     compile "com.google.dagger:dagger-android-support:$dagger_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
     //RX
     //anotaciones databinding, room y dagger
-    kapt 'com.android.databinding:compiler:2.3.3'
     kapt "android.arch.persistence.room:compiler:$arch_version"
     kapt "com.google.dagger:dagger-compiler:$dagger_version"
     kapt "com.google.dagger:dagger-android-processor:$dagger_version"
 
+    androidTestCompile 'com.google.code.findbugs:jsr305:3.0.1'
+    kapt 'com.android.databinding:compiler:2.3.3'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'io.reactivex.rxjava2:rxjava:2.1.5'
     compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
@@ -73,4 +73,8 @@ dependencies {
 }
 repositories {
     mavenCentral()
+}
+
+androidExtensions {
+    experimental = true
 }

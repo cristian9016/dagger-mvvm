@@ -12,6 +12,9 @@
         <variable
             name="clear"
             type="io.reactivex.subjects.Subject"/>
+        <variable
+            name="update"
+            type="io.reactivex.subjects.Subject"/>
 
     </data>
 
@@ -19,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:onClick="@{()->update.onNext(todo)}"
         >
 
         <TextView

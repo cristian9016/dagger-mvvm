@@ -25,4 +25,8 @@ class MainViewModel @Inject constructor(val dao: TodoDao): ViewModel(){
             ObservableFromCallable{dao.insert(todo)}
                     .ApplySchedules()
 
+    fun seleccionTodo(todo:Todo):Observable<Unit> =
+            ObservableFromCallable{dao.update(todo)}
+                    .ApplySchedules()
+
 }

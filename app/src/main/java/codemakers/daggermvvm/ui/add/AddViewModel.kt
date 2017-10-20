@@ -6,6 +6,7 @@ import codemakers.daggermvvm.data.model.Todo
 import codemakers.daggermvvm.util.ApplySchedules
 import javax.inject.Inject
 import io.reactivex.Observable
+import io.reactivex.internal.operators.observable.ObservableFromCallable
 import java.util.*
 
 /**
@@ -14,7 +15,7 @@ import java.util.*
 class AddViewModel @Inject constructor(val dao:TodoDao):ViewModel(){
 
     fun AddTarea(tarea:String,descripcion:String):Observable<Unit>{
-        return Observable.fromCallable{dao.insert(Todo(null,tarea, descripcion, Date()))}
+        return ObservableFromCallable{dao.insert(Todo(null,tarea, descripcion, Date()))}
                 .ApplySchedules()
     }
 

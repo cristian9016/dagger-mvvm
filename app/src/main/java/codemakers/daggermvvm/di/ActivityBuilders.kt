@@ -5,15 +5,12 @@ import codemakers.daggermvvm.di.modules.MainModule
 import codemakers.daggermvvm.di.modules.ViewModelModule
 import codemakers.daggermvvm.ui.add.AddActivity
 import codemakers.daggermvvm.ui.main.MainActivity
+import codemakers.daggermvvm.ui.update.UpdateActivity
 import dagger.MapKey
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 import javax.inject.Scope
 import kotlin.reflect.KClass
-
-/**
- * Created by Cristian on 17/10/2017.
- */
 
 
 @Retention(AnnotationRetention.RUNTIME)
@@ -30,5 +27,9 @@ abstract class ActivityBuilders{
 
     @ActivityScope
     @ContributesAndroidInjector
-    abstract fun bindAAddActivity(): AddActivity
+    abstract fun bindAddActivity(): AddActivity
+
+    @ActivityScope
+    @ContributesAndroidInjector
+    abstract fun bindUpdateActivity(): UpdateActivity
 }

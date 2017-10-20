@@ -27,10 +27,12 @@ class TodoAdapter: RecyclerView.Adapter<TodoAdapter.TodoHolder>() {
         }
 
     val clearSubject: PublishSubject<Todo> = PublishSubject.create()
+    val update: PublishSubject<Todo> = PublishSubject.create()
 
     override fun onBindViewHolder(holder: TodoHolder, position: Int) {
         holder.binding.todo = data[position]
         holder.binding.clear = clearSubject
+        holder.binding.update = update
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoHolder
